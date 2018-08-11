@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div, ul, li {
+            margin: 0;
+            padding: 0
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            height: 24px;
+            line-height: 24px;
+            list-style: none;
+            border: solid 1px;
+            text-align: center;
+        }
+
+        #cart {
+            width: 700px;
+            text-align: center;
+        }
+
+        .num input {
+            width: 30px;
+            text-align: center;
+        }
+
+        ul{
+            background-color: cornflowerblue;
+
+        }
+        .num {
+            width: 150px;
+        }
+
+        #total {
+            clear: both;
+            text-align: right;
+            padding-right: 50px;
+            padding-top: 5px;
+        }
+        #total span {
+            color: red
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        var pro = ["电脑","u盘","充电器","鼠标"];
+        var price = [10000,23,45,65];
+        var sum =0 ;
+        $(function(){
+            addNewItem();
+            allselect();
+        })
+        function addNewItem() {
+            $item=$(".items").detach();
+            $("input[name='add']").click(function () {
+                var index = parseInt(Math.random()*4);
+                $item.children().eq(1).text(pro[index]);
+                $item.children().eq(2).text(price[index]);
+                $item.children().eq(4).text(price[index]);
+                var newitem = $item.clone(true);
+                //加入该商品
+                $("#total").before(newitem);
+                //设置该商品的所有点击事件
+                var input =  newitem.find("input");
+                var li = newitem.find("li");
+                //减号按钮点击事件
+                input.eq(1).click(function () {
+                    //更新数量值
+                    var inputnum = parseInt(input.eq(2).val());
+                    if(inputnum-1<0)
+                        input.eq(2).val(0);
+                    else
+                        input.eq(2).val(inputnum-1);
+                    //更新合计值
+                    li.eq(4).text(li.eq(2).text()*input.eq(2).val());
+                    //更新总价
+                    if(input.eq(0).prop("checked")){
+                        sum = sum-li.eq(2).text();
+                        $("#total span").text(sum);
+                    }
+                });
+                //加号按钮点击事件
+                input.eq(3).click(function () {
+                    //更新数量值
+                    var inputnum = parseInt(input.eq(2).val());
+                    input.eq(2).val(inputnum+1);
+                    //更新合计值
+                    li.eq(4).text(li.eq(2).text()*input.eq(2).val());
+                    //更新总价
+                    if(input.eq(0).prop("checked")){
+                        sum = sum+parseInt(li.eq(2).text());
+                        $("#total span").text(sum);
+                    }
+                });
+                input.eq(0).click(function () {
+                    //更新总价
+                    if(input.eq(0).prop("checked")){
+                        sum = sum+parseInt(li.eq(4).text());
+                    }else {
+                        sum = sum-parseInt(li.eq(4).text())
+                    }
+                    $("#total span").text(sum);
+                })
+                //删除事件
+                li.eq(5).click(function () {
+                    newitem.remove();
+                    //更新总价
+                    sum = sum-parseInt(li.eq(4).text());
+                    $("#total span").text(sum);
+                })
+            })
+        }
+        function allselect() {
+            $("input[name='all']").click(function () {
+                if($("input[name='all']").prop("checked")) {
+                    sum = 0;
+                    $("input[name='one']").prop("checked",true);
+                    $(".sum").each(function () {
+                        sum = sum+parseInt($(this).text())
+                    })
+                    $("#total span").text(sum);
+                }
+                else {
+                    $("input[name='one']").prop("checked",false);
+                    sum=0;
+                    $("#total span").text(sum);
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div id="cart">
+    <ul class="menu">
+        <li><input name="all" type="checkbox">全选</li>
+        <li>产品名称</li>
+        <li>价格</li>
+        <li class="num">数量</li>
+        <li>合计</li>
+        <li>操作</li>
+    </ul>
+    <ul class="items">
+        <li><input  name="one" type="checkbox"></li>
+        <li>手机</li>
+        <li>1000.00</li>
+        <li class="num"><input type="button" value="-"> <input name="num" type="text" value="1"> <input type="button" value="+">
+        </li>
+        <li class="sum">1000.00</li>
+        <li><span>删除</span></li>
+    </ul>
+
+    <div id="total">总价:<span>0.00</span></div>
+</div>
+<input name="add" type="button" value="添加">
+</body>
+</html>

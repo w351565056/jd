@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>我的购物车</title>
+  <link href="css/shoppingCar.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="all">
+  <!--头部标签-->
+  <div class="top">
+    <div class="top1">
+      <!--首页+定位-->
+      <div>
+        <!--首页-->
+        <div class="sy">
+          <p>
+            <img id="BAI" src="images/BAI.png">
+            <a href="#">京东首页</a>
+          </p>
+        </div>
+        <!--定位-->
+        <div class="sy">
+          <p>
+            <img id="adr" src="images/adr.png">
+            <a>天津</a>
+          </p>
+        </div>
+      </div>
+      <!--右侧导航栏-->
+      <div class="sy1">
+        <!--个人信息-->
+        <div>
+          <div class="sy">
+            <a class="msg" id="msg" href="#">请登录</a>
+          </div>
+          <!--七个菜单导航-->
+          <div class="sy2">
+            <p>
+              <a class="msg" href="#">免费注册</a>
+              <a class="msg" href="#">|</a>
+              <a class="msg" href="#">我的订单</a>
+              <a class="msg" href="#">|</a>
+              <a class="msg" href="#">我的京东 <img src="images/xia.png" width="12px"></a>
+              <a class="msg" href="#">|</a>
+              <a class="msg" href="#">京东会员</a>
+              <a class="msg" href="#">|</a>
+              <a class="msg" href="#">企业采购 <img src="images/xia.png" width="12px"></a>
+              <a class="msg" href="#">|</a>
+              <a class="msg" href="#">客户服务 <img src="images/xia.png" width="12px"></a>
+              <a class="msg" href="#">|</a>
+              <a class="msg" href="#">网站导航 <img src="images/xia.png" width="12px"></a>
+              <a class="msg" href="#">|</a>
+              <a class="msg" href="#">手机京东</a>
+              <a class="msg" href="#">|</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--logo+搜索框-->
+  <div class="lgsh">
+    <div class="lgsh1">
+      <!--logo-->
+      <div class="logo">
+        <!--logo图片-->
+        <div>
+          <p>
+            <a href="p_c_firstpage.html"><img src="images/logo-1.png"></a>
+            <a id="gwc" href="shoppingCar.html">购物车</a>
+          </p>
+        </div>
+        <!--购物车图片-->
+        <div></div>
+      </div>
+      <!--Search-->
+      <div class="sh1">
+        <div class="sh">
+          <input id="sh_inp" type="text" id="sh_text" value="牛肉面面">
+          <a id="sh_a" href="#">搜索</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--中段内容-->
+  <div class="mid">
+    <!--配送地址-->
+    <div class="adr">
+      <!--全部商品+京东大药房+配送地址-->
+      <div id="pdu">
+        <!--全部商品-->
+        <div class="pdu">
+          <a class="pdu_a">全部商品</a><a class="pdu_a">3</a>
+        </div>
+        <!--京东大药房-->
+        <div class="pdu">
+          <a class="pdu_a">京东大药房</a>
+        </div>
+        <!--配送地点-->
+        <div class="adr1">
+          <a class="adr_a">配送至:</a>
+          <input type="text" width="100px">
+        </div>
+      </div>
+    </div>
+    <!--购物栏-->
+    <div class="shpl">
+      <!--选中的商品展示-->
+      <div class="sum">
+        <!--统计一行-->
+            <li class="sum_li" id="sum_cb">
+            <input type="checkbox"> 全选
+            </li>
+            <li class="sum_li" id="sum_pd">
+              <a>商品</a>
+            </li>
+            <li class="sum_li" id="sum_prc">
+              <a>单价</a>
+            </li>
+            <li class="sum_li" id="sum_cnt">
+              <a>数量</a>
+            </li>
+            <li class="sum_li" id="sum_ls">
+              <a>小计</a>
+            <li class="sum_li" id="sum_do">
+              <a>操作</a>
+            </li>
+        </div>
+        <!--商品详情一栏-->
+        <!--店家商品-->
+      <div class="shp_all">
+          <!--选择店家-->
+        <div class="shp_name">
+          <div class="shp_name1">
+          <input class="shp_name_inp" type="checkbox"><a class="shp_name_a">矿石问好庄赢店</a>
+          </div>
+        </div>
+        <!--商品详情-->
+        <div class="shp_detl">
+          <!--选择-->
+          <div class="shp_detli">
+          <input type="checkbox">
+          </div>
+          <!--商品-->
+          <div class="shp_pd">
+            <!--图片-->
+            <div class="shp_pd_img">
+            <img width="80px" height="80px" src="images/shili1.jpg">
+            </div>
+            <!--文字描述或标题-->
+            <div class="shp_pd_adetl">
+            <a>RUBU 短裤男休闲五分裤男士2018夏季新品中裤沙滩裤宽松男装潮裤 炫彩红 </a>
+            </div>
+              <!--商品属性-->
+            <div class="shp_pd_ashuxg">
+            <a>颜色：</a><a>选彩红</a>
+            <a>尺码：</a><a>XL</a>
+            </div>
+          </div>
+          <!--单价-->
+          <div class="shp_prc">
+            <a class="shp_prc_a">￥47.00</a>
+          </div>
+          <!--数量-->
+          <div class="shp_cnt">
+            <input type="button" class="shp_cnt_a" value="-"><input style="width: 45px;height: 20px" type="text" value="1"><input type="button" class="shp_cnt_a" value="+"><br>
+            <a class="shp_yn">有货</a>
+          </div>
+          <!--小计-->
+          <div class="shp_sum">
+            <a>￥47.00</a>
+          </div>
+          <!--操作-->
+          <div class="shp_do">
+            <a class="shp_do_a1">删除</a><br>
+            <a class="shp_do_a2">移到我的关注</a><br>
+            <a class="shp_do_a3">加到我的关注</a>
+          </div>
+        </div>
+      </div>
+        <!--结算一栏-->
+        <div class="sumall_outside">
+          <div class="sumall_div">
+            <!--选择-->
+            <div class="sa_cb">
+              <input type="checkbox">
+              <a class="sa_cb_a">全选</a>
+            </div>
+            <!--删除所选-->
+            <div class="sa_dlpd">
+              <a class="sa_dlpd_a">删除所选中的商品</a>
+            </div>
+            <!--移到关注-->
+            <div class="sa_dlmv">
+              <a class="sa_dlmv_a">移到我的关注</a>
+            </div>
+            <!--清理全部-->
+            <div class="sa_cln">
+              <a class="sa_cln_a">清理购物车</a>
+            </div>
+            <div class="sa_right">
+              <!--已选-->
+              <div class="sa_chos">
+                <a class="sa_chos_a1">已选择</a><a class="sa_chos_a2">1</a><a class="sa_chos_a1">件商品</a>
+              </div>
+              <!--总价-->
+              <div class="sa_sumall">
+                <a class="sa_sumall_a">总价:</a>
+                <a class="sa_sumall_a1">￥15.00</a>
+                <!--<br>-->
+                <!--<a class="sa_sumall_a">已节省：</a>-->
+                <!--<a class="sa_sumall_a">-￥12.00</a>-->
+              </div>
+              <!--结算-->
+              <div class="sa_pay">
+                <a class="sa_pay_a">去结算</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--外侧结算栏-->
+<div class="sumall">
+  <div class="sumall_div">
+    <!--选择-->
+    <div class="sa_cb">
+      <input type="checkbox">
+      <a class="sa_cb_a">全选</a>
+    </div>
+    <!--删除所选-->
+    <div class="sa_dlpd">
+      <a class="sa_dlpd_a">删除所选中的商品</a>
+    </div>
+    <!--移到关注-->
+    <div class="sa_dlmv">
+      <a class="sa_dlmv_a">移到我的关注</a>
+    </div>
+    <!--清理全部-->
+    <div class="sa_cln">
+      <a class="sa_cln_a">清理购物车</a>
+    </div>
+    <div class="sa_right">
+      <!--已选-->
+      <div class="sa_chos">
+        <a class="sa_chos_a1">已选择</a><a class="sa_chos_a2">1</a><a class="sa_chos_a1">件商品</a>
+      </div>
+      <!--总价-->
+      <div class="sa_sumall">
+        <a class="sa_sumall_a">总价:</a>
+        <a class="sa_sumall_a1">￥15.00</a><br>
+        <a class="sa_sumall_a">已节省：</a>
+        <a class="sa_sumall_a">-￥12.00</a>
+      </div>
+      <!--结算-->
+      <div class="sa_pay">
+        <a class="sa_pay_a">去结算</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom_zo1"></div>
+    <div class="bottom">
+    <ul class="bottom_zoo">
+      <li class="bottom_one"><a class="bottom_a1">购物指南</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">购物流程</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">会员介绍</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">生活旅行</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">常见问题</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">大家电</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">联系客服</a></li>
+    </ul>
+    <ul class="bottom_zoo">
+      <li class="bottom_one"><a class="bottom_a1" >配送方式</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">上门自提</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">211限时达</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">配送服务查询</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">配送费收取标准</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">海外配送</a></li>
+    </ul>
+    <ul class="bottom_zoo">
+      <li class="bottom_one"><a class="bottom_a1" >支付方式</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">货到付款</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">在线支付</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">分期付款</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">邮局汇款</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">公司转账</a></li>
+    </ul>
+    <ul class="bottom_zoo">
+      <li class="bottom_one"><a class="bottom_a1" >售后服务</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">售后政策</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">价格保护</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">退款说明</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">返修/退换货</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">取消订单</a></li>
+    </ul>
+    <ul class="bottom_zoo">
+      <li class="bottom_one"><a class="bottom_a1" >特色服务</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">夺宝岛</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">DIY装机</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">京东E卡</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">京东通信</a></li>
+      <li class="bottom_two"><a class="bottom_a2" href="#">京东JD+</a></li>
+    </ul>
+    <div class="floot">
+      <ul class="bottom_za">
+        <p class="bottom_za_ul">
+          <a class="bottom_za_one_a" href="#">关于我们</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">联系我们</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">联系客服</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">合作招商</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">商家帮助</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">营销中心</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">手机京东</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">友情链接</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">销售联盟</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">京东社区</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">风险监测</a>
+          <a class=bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">隐私政策</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">京东公益</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">English Site</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">Media & IR</a>
+
+        </p>
+
+        <p class="bottom_za_ul">
+          <a class="bottom_za_one_a" href="#">京公网安备 11000002000088号</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">京ICP证070359号</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_one_a" href="#">新出发京零 字第大120007号</a>
+
+        </p>
+        <p class="bottom_za_ul">
+          <a class="bottom_za_li"><a class="bottom_za_one_a" href="#">Copyright © 2004 - 2018  京东JD.com 版权所有</a></a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_li"><a class="bottom_za_one_a" href="#">消费者维权热线：4006067733  经营证照</a></a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_li"><a class="bottom_za_one_a" href="#">(京)网械平台备字(2018)第00003号</a></a>
+
+        </p>
+        <p class="bottom_za_ul">
+          <a class="bottom_za_li"><img class="bottom_za_one_a" src="images/z1.png" width="15px"><a class="bottom_za_one_a" href="#">Global Site</a></a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_li"><img class="bottom_za_one_a" src="images/z2.png" width="15px"><a class="bottom_za_one_a" href="#">Сайт России</a></a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_li"><img class="bottom_za_one_a" src="images/z3.png" width="15px"><a class="bottom_za_one_a" href="#">Situs Indonesia</a></a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_li"><img class="bottom_za_one_a" src="images/z4.png" width="15px"><a class="bottom_za_one_a" href="#">Sitio de España</a></a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_li"><img class="bottom_za_one_a" src="images/z5.png" width="15px"><a class="bottom_za_one_a" href="#">เว็บไซต์ประเทศไทย</a></a>
+        </p>
+        <p class="bottom_za_ul">
+          <a class="bottom_za_li"><a class="bottom_za_one_a" href="#">京东旗下网站：京东钱包</a></a>
+          <a class="bottom_za_one_a">|</a>
+          <a class="bottom_za_li"><a class="bottom_za_one_a" href="#">京东云</a></a>
+        </p>
+      </ul>
+
+    </div>
+  </div>
+  <!--最右侧-->
+<div class="right_float_aaa">→</div>
+<div class="right_float_aa"></div>
+<div class="right_float">
+  <div class="right_float_one"></div>
+  <div class="right_float_one"></div>
+  <div class="right_float_one"></div>
+</div>
+
+<div class="right_float2">
+  <div class="right_float_one"></div>
+  <div class="right_float_one"></div>
+
+</div>
+<div class="right_float_ding">↑↑↑</div>
+
+</div>
+</body>
+</html>

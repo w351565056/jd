@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东商城</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+    <script>
+        var nowimg=2;
+        $(function () {
+            setTimeout("changeImg()",3000);
+            showcate();
+            setInterval("seckill()",1000);
+        });
+        function changeImg() {
+            nowsrc='images/ad'+nowimg+'.jpg';
+            $("#left-2 img").attr('src',nowsrc);
+            if(nowimg==4) {
+                nowimg = 1;
+            }
+            else {
+                nowimg++;
+            }
+            setTimeout("changeImg()",3000);
+        }
+        function showcate() {
+            $('.cate_channe').hide();
+            $("#cate li").each(function (index) {
+                $(this).hover(function () {
+                    nowid='#cate_channe'+(index+1);
+                    $(nowid).toggle();
+                    $(nowid).hover(function () {
+                        $(nowid).show();
+                    },function () {
+                        $(nowid).hide();
+                    })
+                },function () {
+                    $(nowid).toggle();
+                })
+            });
+        }
+        function seckill() {
+            var sectime = [0,2,4,8,10,12,14,16,18,20,22,24];
+            var $hournode=$("#cd_time_hour");
+            var $minutenode=$("#cd_time_minute");
+            var $secondnode=$("#cd_time_second");
+            now = new Date();
+            hour = now.getHours();
+            minute=60-now.getMinutes()-1;
+            second=60-now.getSeconds();
+            for(i = 0;i<sectime.length;i++){
+                if(hour<sectime[i]){
+                    hour = sectime[i]-hour-1;
+                    if(minute==60){
+                        minute=0;
+                        hour = hour+1;
+                    }
+                    if(second==60){
+                        second=0;
+                        minute=minute+1;
+                    }
+                    if(hour<10)
+                        hour="0"+hour;
+                    if(minute<10)
+                        minute="0"+minute;
+                    if(second<10)
+                        second="0"+second;
+                    break;
+                }
+            }
+            $hournode.text(hour);
+            $minutenode.text(minute);
+            $secondnode.text(second);
+        }
+    </script>
+</head>
+<body>
+<div id="header">
+    <div id="logo"></div>
+    <div id="menu">
+        <ul id="m_left">
+            <li><img src="images/zuobiao.png" ></li>
+            <li>北京</li>
+        </ul>
+        <ul id="m_right">
+            <li><a>你好，请登录</a>&nbsp;&nbsp;<a style="color: red">免费注册</a></li>
+            <li class="spacer"></li>
+            <li><a>我的订单</a></li>
+            <li class="spacer"></li>
+            <li><a>我的京东</a><img class="down" src="images/down.png" width="10px"></li>
+            <li class="spacer"></li>
+            <li><a>京东会员</a></li>
+            <li class="spacer"></li>
+            <li><a>企业采购</a><img class="down" src="images/down.png" width="10px"></li>
+            <li class="spacer"></li>
+            <li><a>客户服务</a></li>
+            <li class="spacer"></li>
+            <li><a>网站导航</a></li>
+            <li class="spacer"></li>
+            <li><a>手机京东</a></li>
+        </ul>
+    </div>
+    <div id="search">
+        <div id="search-in">
+            <input id="input"><span id="camera"></span><img id="search-img" src="images/search.PNG" >
+        </div>
+        <div id="search-right"><div id="div-t">我的购物车</div></div>
+        <div id="search-down">
+            <a id="down-1" style="color: red">平衡轮首发</a>
+            <a>0元试用</a>
+            <a>红魔</a>
+            <a>每150-50</a>
+            <a>奶爸盛典</a>
+            <a>百元空调</a>
+            <a>凉鞋清仓</a>
+            <a>满99-50</a>
+            <a>卫浴1元</a>
+        </div>
+
+    </div>
+    <div id="navitems">
+            <ul>
+                <li>秒杀</li>
+                <li>优惠券</li>
+                <li>PLUS会员</li>
+                <li>闪购</li>
+                <li class="spacer navitems-spacer" ></li>
+                <li>拍卖</li>
+                <li>京东服饰</li>
+                <li>京东超市</li>
+                <li>生鲜</li>
+                <li class="navitems-spacer spacer " ></li>
+                <li>全球购</li>
+                <li>京东金融</li>
+        </ul>
+    </div>
+</div>
+<div id="body">
+    <div id="container">
+        <div id="left-1">
+            <ul id="cate">
+                <li><a>家用电器</a></li><li><a>手机</a><span>/</span><a>运行商</a><span>/</span><a>数码</a></li>
+                <li><a>电脑</a><span>/</span><a>办公</a></li><li><a>家居</a><span>/</span><a>家具</a><span>/</span><a>家装</a><span>/</span><a>厨具</a></li>
+                <li><a>家用电器</a></li><li><a>手机</a><span>/</span><a>运行商</a><span>/</span><a>数码</a></li>
+                <li><a>电脑</a><span>/</span><a>办公</a></li><li><a>家居</a><span>/</span><a>家具</a><span>/</span><a>家装</a><span>/</span><a>厨具</a></li>
+                <li><a>家用电器</a></li><li><a>手机</a><span>/</span><a>运行商</a><span>/</span><a>数码</a></li>
+                <li><a>电脑</a><span>/</span><a>办公</a></li><li><a>家居</a><span>/</span><a>家具</a><span>/</span><a>家装</a><span>/</span><a>厨具</a></li>
+                <li><a>家用电器</a></li><li><a>手机</a><span>/</span><a>运行商</a><span>/</span><a>数码</a></li>
+                <li><a>电脑</a><span>/</span><a>办公</a></li><li><a>家居</a><span>/</span><a>家具</a><span>/</span><a>家装</a><span>/</span><a>厨具</a></li>
+                <li><a>家用电器</a></li>
+            </ul>
+            <div class="cate_channe" id="cate_channe1">
+                <ul>
+                    <li>家用电器</li>
+                    <li>家用电器</li>
+                    <li>家用电器</li>
+                    <li>家用电器</li>
+                    <li>家用电器</li>
+                    <li>家用电器</li>
+                    <li>家用电器</li>
+                    <li>家用电器</li>
+                </ul>
+            </div>
+            <div class="cate_channe" id="cate_channe2">
+                <ul>
+                    <li>手机</li>
+                    <li>手机</li>
+                    <li>手机</li>
+                    <li>手机</li>
+                    <li>手机</li>
+                    <li>手机</li>
+                    <li>手机</li>
+                    <li>手机</li>
+                </ul>
+            </div>
+            <div class="cate_channe" id="cate_channe3">
+                <ul>
+                    <li>电脑</li>
+                    <li>电脑</li>
+                    <li>电脑</li>
+                    <li>电脑</li>
+                    <li>电脑</li>
+                    <li>电脑</li>
+                    <li>电脑</li>
+                    <li>电脑</li>
+                </ul>
+            </div>
+        </div>
+        <div id="left-2"><img src="images/ad1.jpg"></div>
+        <div id="right-1">
+            <div class="right-1-1"><img src="images/s-ad1.jpg"></div>
+            <div class="right-1-1"><img src="images/s-ad2.jpg"></div>
+            <div class="right-1-1"><img src="images/s-ad3.jpg"></div>
+        </div>
+        <div id="right-2">
+            <div id="j_user">
+                <a><img id="login_img" src="images/no_login.jpg"></a>
+                <p >HI~欢迎来到京东！</p>
+                <p ><a>登录</a>&nbsp;<a>注册</a></p>
+                <a class="user_down">新人福利</a><a class="user_down user_down_plus">PLUS会员</a>
+            </div>
+            <div id="j_news">
+                <a class="j_news_first">促销</a><a class="j_news_first j_news_last ">公告</a>
+                <a id="j_news_more">更多</a>
+                <div id="downline"></div>
+                <ul>
+                    <li><a>Segway平衡轮新品首发！</a></li>
+                    <li><a>百万阶梯券企业专享</a></li>
+                    <li><a>海囤运动购全球好物</a></li>
+                    <li><a>家具满199减100</a></li>
+                </ul>
+            </div>
+            <div id="j_service">
+                <ul>
+                    <li><a>话费</a></li><li><a>机票</a></li>
+                    <li><a>酒店</a></li><li><a>游戏</a></li>
+                    <li><a>企业购</a></li><li><a>加油卡</a></li>
+                    <li><a>电影票</a></li><li><a>火车票</a></li>
+                    <li><a>众筹</a></li><li><a>理财</a></li>
+                    <li><a>礼品卡</a></li><li><a>白条</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="seckill">
+    <div id="seckill-left">
+        <a >
+            <div id="sk_tit">京东秒杀</div>
+            <div id="sk_subtit">FLASH DEALS</div>
+            <div id="sk_ico"><img src="images/light.png"></div>
+            <div id="sk_desc">本场距离结束还剩</div>
+            <div id="sk_cd">
+                <div class="cd_time"><span id="cd_time_hour" class="cd_time_txt">00</span></div>
+                <div class="cd_time"><span id="cd_time_minute" class="cd_time_txt">00</span></div>
+                <div class="cd_time"><span id="cd_time_second" class="cd_time_txt">00</span></div>
+            </div>
+        </a>
+    </div>
+    <div id="seckill-middle">
+        <div class="middle-items">
+            <div class="items">
+                <a>
+                    <img src="images/item1.webp">
+                    <p>Apple iPad 平板电脑 9.7英寸（32G WLAN版/A9 芯片/Retina显示屏/Touch ID技术 MPGT2CH/A）金色</p>
+                    <span class="price1">¥1938.00</span><span class="price2">¥2688.00</span>
+                </a>
+            </div>
+        </div>
+        <div class="middle-items">
+            <div class="items">
+                <a>
+                    <img src="images/item2.webp">
+                    <p>戴尔DELL游匣G3 15.6英寸游戏笔记本电脑(i5-8300H 8G 128GSSD+1T GTX1060MQ 6G独显 背光键盘 IPS)烈焰版</p>
+                    <span class="price1">¥6698.00</span><span class="price2">¥7299.00</span>
+                </a>
+            </div>
+        </div>
+        <div class="middle-items">
+            <div class="items">
+                <a>
+                    <img src="images/item3.webp">
+                    <p>美国进口车厘子 1磅装 果径约26-28mm 新鲜水果</p>
+                    <span class="price1">¥39.60</span><span class="price2">¥79.90</span>
+                </a>
+            </div>
+        </div>
+        <div class="middle-items">
+            <div class="items">
+                <a>
+                    <img src="images/item4.webp">
+                    <p>一加手机6 6GB+64GB 亮瓷黑 全面屏双摄游戏手机 全网通4G 双卡双待</p>
+                    <span class="price1">¥3159.00</span><span class="price2">¥3199.00</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="seckill-right"><img src="images/item5.jpg" width="190"></div>
+</div>
+<div id="footer">
+    <div id="footer_top">
+        <div class="unit">
+            <span id="unit1-txt-1"></span>
+            <p class="unit-txt-2">品类齐全，轻松购物</p>
+        </div>
+        <div class="unit">
+            <span id="unit2-txt-1"></span>
+            <p class="unit-txt-2">多仓直发，极速配送</p>
+        </div>
+        <div class="unit">
+            <span id="unit3-txt-1"></span>
+            <p class="unit-txt-2">正品行货，精致服务</p>
+        </div>
+        <div class="unit">
+            <span id="unit4-txt-1"></span>
+            <p class="unit-txt-2">天天低价，畅选无忧</p>
+        </div>
+    </div>
+    <div id="footer_middle">
+        <div id="f-unit-1" class="f-unit" >
+            <h5 class="f-middle-tit">购物指南</h5>
+            <ul>
+                <li><a>购物流程</a></li>
+                <li><a>会员介绍</a></li>
+                <li><a>生活旅行</a></li>
+                <li><a>常见问题</a></li>
+                <li><a>大家电</a></li>
+                <li><a>联系客服</a></li>
+            </ul>
+        </div>
+        <div class="f-unit">
+            <h5 class="f-middle-tit">购物指南</h5>
+            <ul>
+                <li><a>购物流程</a></li>
+                <li><a>会员介绍</a></li>
+                <li><a>生活旅行</a></li>
+                <li><a>常见问题</a></li>
+                <li><a>大家电</a></li>
+                <li><a>联系客服</a></li>
+            </ul>
+        </div>
+        <div class="f-unit">
+            <h5 class="f-middle-tit">购物指南</h5>
+            <ul>
+                <li><a>购物流程</a></li>
+                <li><a>会员介绍</a></li>
+                <li><a>生活旅行</a></li>
+                <li><a>常见问题</a></li>
+                <li><a>大家电</a></li>
+                <li><a>联系客服</a></li>
+            </ul>
+        </div>
+        <div class="f-unit">
+            <h5 class="f-middle-tit">购物指南</h5>
+            <ul>
+                <li><a>购物流程</a></li>
+                <li><a>会员介绍</a></li>
+                <li><a>生活旅行</a></li>
+                <li><a>常见问题</a></li>
+                <li><a>大家电</a></li>
+                <li><a>联系客服</a></li>
+            </ul>
+        </div>
+        <div class="f-unit">
+            <h5 class="f-middle-tit">购物指南</h5>
+            <ul>
+                <li><a>购物流程</a></li>
+                <li><a>会员介绍</a></li>
+                <li><a>生活旅行</a></li>
+                <li><a>常见问题</a></li>
+                <li><a>大家电</a></li>
+                <li><a>联系客服</a></li>
+            </ul>
+        </div>
+        <div class="f-unit">
+            <h5 class="f-middle-tit" style="text-align: center">京东自营覆盖区县</h5>
+            <ul>
+                <li>京东已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</li>
+                <li style="text-align: right"><a>查看详情></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer_down">
+        <ul id="f-down-1">
+            <li><a>关于我们</a><li>|</li></li><li><a>关于我们</a><li>|</li></li>
+            <li><a>关于我们</a><li>|</li></li><li><a>关于我们</a><li>|</li></li>
+            <li><a>关于我们</a><li>|</li></li><li><a>关于我们</a><li>|</li></li>
+            <li><a>关于我们</a><li>|</li></li><li><a>关于我们</a><li>|</li></li>
+            <li><a>关于我们</a><li>|</li></li><li><a>关于我们</a><li>|</li></li>
+            <li><a>关于我们</a><li>|</li></li><li><a>关于我们</a><li>|</li></li>
+            <li><a>关于我们</a><li>|</li></li><li><a>关于我们</a><li>|</li></li>
+            <li><a>关于我们</a></li>
+        </ul>
+        <div id="f-downs">
+            <ul id="f-down-2">
+                <li ><a>京公网安备 11000002000088号</a><li>|</li></li><li><a>京ICP证070359号</a><li>|</li></li>
+                <li><a>互联网药品信息服务资格证编号(京)-经营性-2014-0008</a><li>|</li></li><li><a>新出发京零 字第大120007号</a></li>
+            </ul>
+            <ul id="f-down-3">
+                <li><a>互联网出版许可证编号新出网证(京)字150号</a><li>|</li></li><li><a>出版物经营许可证</a><li>|</li></li>
+                <li><a>网络文化经营许可证京网文[2014]2148-348号</a><li>|</li></li><li><a>违法和不良信息举报电话：4006561155</a></li>
+            </ul>
+            <ul id="f-down-4">
+                <li><a>Copyright © 2004 - 2018  京东JD.com 版权所有</a><li>|</li></li><li><a>消费者维权热线：4006067733经营证照</a><li>|</li></li>
+                <li><a>(京)网械平台备字(2018)第00003号</a></li>
+            </ul>
+            <ul id="f-down-5">
+                <li><a>Global Site</a><li>|</li></li><li><a>Сайт России</a><li>|</li></li>
+                <li><a>Situs Indonesia</a><li>|</li></li><li><a>Sitio de España</a><li>|</li></li>
+                <li><a>เว็บไซต์ประเทศไทย</a></li>
+            </ul>
+            <ul id="f-down-6">
+                <li><a>京东旗下网站：京东钱包</a><li>|</li></li><li><a>京东云</a></li>
+            </ul>
+            <ul id="f-down-7">
+                <li><a><span id="down-img1"></span></a></li>
+                <li><a><span id="down-img2"></span></a></li>
+                <li><a><span id="down-img3"></span></a></li>
+                <li><a><span id="down-img4"></span></a></li>
+                <li><a><span id="down-img5"></span></a></li>
+                <li><a><span id="down-img6"></span></a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
