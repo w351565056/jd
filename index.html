@@ -26,18 +26,23 @@
         }
         function showcate() {
             $('.cate_channe').hide();
+            /*$("#cate li").hover(function () {()
+               $("#cate_channe"+($(this).index+1)).show()
+            },function () {
+                $("#cate_channe"+($(this).index()+1)).hide()
+            });*/
             $("#cate li").each(function (index) {
                 $(this).hover(function () {
-                    nowid='#cate_channe'+(index+1);
+                    nowid = '#cate_channe' + (index + 1);
                     $(nowid).toggle();
                     $(nowid).hover(function () {
                         $(nowid).show();
-                    },function () {
+                    }, function () {
                         $(nowid).hide();
                     })
-                },function () {
+                }, function () {
                     $(nowid).toggle();
-                })
+                });
             });
         }
         function seckill() {
@@ -59,6 +64,7 @@
                     if(second==60){
                         second=0;
                         minute=minute+1;
+
                     }
                     if(hour<10)
                         hour="0"+hour;
